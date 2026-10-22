@@ -106,7 +106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 420.0]
+    coordinate: [856, 412.0]
     rotation: 0
     state: enabled
 - name: blocks_file_source_0
@@ -128,7 +128,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 748.0]
+    coordinate: [264, 452.0]
     rotation: 0
     state: disabled
 - name: blocks_throttle2_0
@@ -149,7 +149,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 772.0]
+    coordinate: [512, 476.0]
     rotation: 0
     state: disabled
 - name: digital_symbol_sync_xx_0
@@ -360,7 +360,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [88, 764.0]
+    coordinate: [80, 428.0]
     rotation: 0
     state: disabled
 - name: freq_xlating_fir_filter_xxx_0
@@ -428,7 +428,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1040, 380.0]
+    coordinate: [1048, 372.0]
     rotation: 0
     state: enabled
 - name: qtgui_sink_x_0
@@ -457,7 +457,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [896, 236.0]
+    coordinate: [888, 252.0]
     rotation: 0
     state: enabled
 - name: rational_resampler_xxx_0
@@ -477,7 +477,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1256, 396.0]
+    coordinate: [1232, 388.0]
     rotation: 0
     state: enabled
 - name: rtlsdr_source_0
