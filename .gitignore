@@ -7,8 +7,8 @@ __pycache__/
 *.so
 
 #large files
-*.bin
-*.cfile
+# *.bin
+# *.cfile
 
 
 # Distribution / packaging
