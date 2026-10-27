@@ -89,9 +89,24 @@ def find_hit(buf: bytearray, start: int):
 
 def estimate_thresholds(recent: np.ndarray, old: np.ndarray):
     lo, hi = np.percentile(recent, [2, 98])
-    if hi - lo < 0.05:
+    if hi - lo < 0.05:                 # basically flat -> no usable signal
         return old, False
-    new = lo + (hi - lo) * np.array([1 / 6, 1 / 2, 5 / 6])
+    # The four tones always demodulate to c + a * (-1, -1/3, 1/3, 1). Fit c and
+    # a to the symbols (nearest level, then least squares) starting from the
+    # current thresholds. Unlike spreading thresholds between percentiles,
+    # this holds when the payload uses only some levels, e.g. dark colour
+    # planes that are almost all level 0 and 1.
+    ideal = np.array([-1.0, -1.0 / 3.0, 1.0 / 3.0, 1.0])
+    c, a = old[1], (old[2] - old[0]) * 0.75
+    for _ in range(4):
+        idx = np.clip(np.rint(((recent - c) / a + 1.0) * 1.5), 0, 3).astype(np.int64)
+        if np.unique(idx).size < 2:
+            return old, False
+        lv = ideal[idx]
+        a, c = np.polyfit(lv, recent, 1)
+        if a < 0.05:
+            return old, False
+    new = c + a * np.array([-2.0 / 3.0, 0.0, 2.0 / 3.0])
     return 0.7 * old + 0.3 * new, True
 
 
