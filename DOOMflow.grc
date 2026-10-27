@@ -116,7 +116,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: C:\Users\miles\OneDrive\Desktop\Sat Stuff\GNU\DOOM\doom_gameplay.cfile
+    file: doom_gameplay.cfile
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
